@@ -2,4 +2,4 @@
 React Native Instagram Application
 
 
-![alt text](http://umitunal.org/wp-content/github/instagram2.PNG)
+![alt text](http://umitunal.org/wp-content/github/instagram3.PNG)
