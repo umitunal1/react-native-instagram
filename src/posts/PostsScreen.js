@@ -6,11 +6,15 @@ import PostActions from './PostActions';
 import PostLikes from './PostLikes';
 
 class PostsScreen extends Component {
+    constructor(props){
+        super(props);        
+    }
+
     render() {
         return (
             <View>
-                <PostHeader />
-                <PostImage />
+                <PostHeader profilePhoto ={this.props.profilePhoto} username={this.props.username} location={this.props.location}/>
+                <PostImage postImage={this.props.postImage} />
                 <PostActions />
                 <PostLikes />
             </View>

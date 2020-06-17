@@ -2,27 +2,24 @@ import React, { Component } from 'react';
 import { View, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { constants } from '../../utils/constants'
 
-
 class PostActions extends Component {
-
     constructor(props) {
         super(props);
         this.state = { likedStatus: false };
     }
 
-    handlePress = (msg) => {
-        console.log(msg, this.state.likedStatus);
+    handlePress = (msg) => {       
         this.setState({ likedStatus: !this.state.likedStatus });
         setTimeout(() => {
-            console.log(this.state.likedStatus);
-        }, 2000);
+           this.state.likedStatus ? console.log("Liked!") : console.log("Like Undo!");
+        }, 100);
     }
 
     render() {
         return (
             <View style={{ flexDirection: 'row', flex: 1, justifyContent: 'space-between' }}>
                 <View style={{ flexDirection: 'row' }}>
-                    <TouchableOpacity onPress={() => this.handlePress("pressed")}>
+                    <TouchableOpacity onPress={() => this.handlePress()}>
                         <Image
                             style={this.state.likedStatus ? styles.likeButtonPressed : styles.likeButtonNotPressed}
                             source={this.state.likedStatus ? require('../../images/liked.png') : require('../../images/likeempty.png')}></Image>
@@ -32,7 +29,6 @@ class PostActions extends Component {
                         <Image
                             style={{ width: 20, height: 20, margin: constants.margin + 5, tintColor: constants.tintColor }}
                             source={require('../../images/comment.png')}></Image>
-
                     </TouchableOpacity>
 
                     <TouchableOpacity>
